@@ -11,8 +11,6 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(zoxide init zsh)"
-alias cd="z"
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -141,3 +139,7 @@ alias gl='git log --graph --abbrev-commit --decorate \
 # ------------------------------------
 alias jc="javac *.java"
 export PATH="$HOME/.local/bin:$PATH"
+
+# zoxide (må ligge sist)
+eval "$(zoxide init zsh)"
+alias cd="z"
