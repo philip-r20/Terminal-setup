@@ -39,7 +39,9 @@ alias gc='git commit -m'                      # Commit med melding
 alias gca='git commit -am'                    # Commit + auto-stage modifiserte filer
 alias gpl='git pull'                          # Hent + flett endringer fra remote
 alias gp='git push'                           # Push endringene dine
-alias gl='git log --oneline --graph --decorate'  # Fin, kompakt loggvisning
+alias gl='git log --graph --abbrev-commit --decorate \
+--pretty=format:"%C(#cba6f7)%h%Creset %C(#f5a9e1)%d%Creset %C(#c0caf5)%s%Creset %C(#7dcfff)- %an %C(#565f89)(%cr)"'
+                                              # Fargerik, kompakt loggraf
 
 # ────────────────────────────────────────────────
 # Branching
@@ -116,7 +118,8 @@ alias lg='lazygit'                            # Hurtig TUI UI for git
 bindkey -s '^G' 'lazygit\n'
 
 # ---- nvim ----
-alias nvim="$HOME/bin/nvim-macos-arm64/bin/nvim"
+# Bruk manuelt installert Neovim hvis den finnes, ellers den i PATH (f.eks. Homebrew)
+[[ -x "$HOME/bin/nvim-macos-arm64/bin/nvim" ]] && alias nvim="$HOME/bin/nvim-macos-arm64/bin/nvim"
 alias vim="nvim"
 alias vi="nvim"
 
@@ -130,9 +133,6 @@ alias lt="eza -T --icons"  # tree-view
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 export PATH="$JAVA_HOME/bin:$PATH"
-
-alias gl='git log --graph --abbrev-commit --decorate \
---pretty=format:"%C(#cba6f7)%h%Creset %C(#f5a9e1)%d%Creset %C(#c0caf5)%s%Creset %C(#7dcfff)- %an %C(#565f89)(%cr)"'
 
 # ------------------------------------
 # Java alias

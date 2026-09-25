@@ -1,5 +1,5 @@
 # This is Git's per-user configuration file.
-[user]
-# Please adapt and uncomment the following lines:
-    name = philirod
-    email = philirod@uio.no
+# Navn og e-post legges til av install.sh (eksisterende verdier beholdes),
+# eller manuelt med:
+#   git config --global user.name  "Ditt Navn"
+#   git config --global user.email "din@epost.no"
